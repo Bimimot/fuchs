@@ -1,0 +1,59 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'xxs': 375px,
+  'xs': 768px,
+  's': 996px,
+  'm': 1196px,
+  'l': 1440px,
+  'xl': 1920px,
+  'xxl': 2560px,
+);
+
+@mixin breakpoint($name) {
+  @media screen and (max-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+@mixin xxlarge {
+  @include breakpoint(xxl) {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @include breakpoint(xl) {
+    @content;
+  }
+}
+
+@mixin large {
+  @include breakpoint(l) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @include breakpoint(m) {
+    @content;
+  }
+}
+
+@mixin small {
+  @include breakpoint(s) {
+    @content;
+  }
+}
+
+@mixin xsmall {
+  @include breakpoint(xs) {
+    @content;
+  }
+}
+
+@mixin xxsmall {
+  @include breakpoint(xxs) {
+    @content;
+  }
+}

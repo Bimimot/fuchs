@@ -1,0 +1,15 @@
+@use 'fonts';
+@use 'normalize.css';
+
+:root {
+  --main-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root, html, body {
+  background: #1b1f22;
+  height: 100%;
+}
