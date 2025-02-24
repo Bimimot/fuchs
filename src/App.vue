@@ -1,6 +1,4 @@
 <template>
-  
-  <div>Hello world</div>
   <Layout />
 </template>
 
