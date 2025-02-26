@@ -2,7 +2,11 @@
 @use 'normalize.css';
 
 :root {
-  --main-color: #fff;
+  
+
+  --text-color: #fff;
+
+  --popup-background: rgba(27, 31, 34, 0.85);
 }
 
 * {
@@ -12,10 +16,12 @@
 :root, html, body {
   background: #1b1f22;
   height: 100%;
+  font-size: 16px;
+  overflow: hidden;
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s .2s ease;
 }
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
