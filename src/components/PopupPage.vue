@@ -7,7 +7,7 @@
             <CloseIcon />
           </div>
           <h2 class="page-title">{{ route.headerTitle }}</h2>
-          <!-- <component :is="route.component" /> -->
+          <component :is="route.component" />
         </div>
       </div>
     </Transition>

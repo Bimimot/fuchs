@@ -4,9 +4,7 @@ import { Nullable } from "types";
 import { RoutesIds } from "constants/routes";
 
 export const useRoutes = defineStore('routes', () => {
-    const activeRouteId = ref<Nullable<RoutesIds>>();
-
-
+    const activeRouteId = ref<Nullable<RoutesIds>>(null);
 
     function setActiveRouteId(id: RoutesIds) {
         activeRouteId.value = id;

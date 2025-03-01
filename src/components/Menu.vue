@@ -17,7 +17,6 @@
 import { routes } from '../constants/routes';
 import { useRoutes } from '../state/routes.store';
 
-
 const { setActiveRouteId } = useRoutes();
 </script>
 
