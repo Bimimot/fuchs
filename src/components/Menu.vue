@@ -37,8 +37,9 @@ const { setActiveRouteId } = useRoutes();
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.75);
     border-right: 1px solid rgba(255, 255, 255, 0.75);
-    font-family: RobotoCondensed, sans-serif;
-    letter-spacing: 0.12rem;
+    font-weight: 300;
+    font-size: .75rem;
+    letter-spacing: .25rem;
     transition: all 0.3s ease;
 
     &:hover {

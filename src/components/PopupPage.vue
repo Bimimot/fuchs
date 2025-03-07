@@ -62,15 +62,14 @@ const route = computed(() =>
 
   .page-title {
     padding: 0;
-    font-family: Roboto, sans-serif;
     vertical-align: baseline;
-    color: var(--text-color);
+    color: var(--title-color);
     font-weight: 600;
     text-transform: uppercase;
     font-size: 1.5rem;
     line-height: 1.4;
     letter-spacing: 0.5rem;
-    border-bottom: solid 1px var(--text-color);
+    border-bottom: solid 1px var(--title-color);
     width: max-content;
     padding-bottom: 0.5rem;
     margin: 0 0 2rem 0;
