@@ -1,20 +1,14 @@
 <template>
   <Teleport to="body">
-    <Transition name="fade">
-      <div
-        v-if="route"
-        class="overflow"
-        @click="routesStore.resetActiveRouteId"
-      >
-        <div class="popup" @click.stop="null">
-          <div class="close" @click.stop="routesStore.resetActiveRouteId">
-            <CloseIcon />
-          </div>
-          <h2 class="page-title">{{ route.headerTitle }}</h2>
-          <component :is="route.component" />
+    <div v-if="route" class="overflow" @click="routesStore.resetActiveRouteId">
+      <div class="popup" @click.stop="null">
+        <div class="close" @click.stop="routesStore.resetActiveRouteId">
+          <CloseIcon />
         </div>
+        <h2 class="page-title">{{ route.headerTitle }}</h2>
+        <component :is="route.component" />
       </div>
-    </Transition>
+    </div>
   </Teleport>
 </template>
 
@@ -31,6 +25,16 @@ const route = computed(() =>
 </script>
 
 <style lang="scss" scoped>
+@keyframes popup {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-0.5rem);
+  }
+}
 .overflow {
   position: fixed;
   display: flex;
@@ -50,6 +54,8 @@ const route = computed(() =>
   max-width: 100%;
   min-height: 10rem;
   border-radius: 4px;
+  opacity: 0;
+  animation: popup 0.4s ease 0.2s forwards;
 
   .close {
     position: absolute;

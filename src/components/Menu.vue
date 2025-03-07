@@ -1,11 +1,11 @@
 <template>
-  <div class="menu">
+  <div class="menu" :class="{ hidden: isPopup }">
     <ul class="list">
       <li
         v-for="route in routes"
         class="option"
         :key="route.id"
-        @click="() => setActiveRouteId(route.id)"
+        @click="() => routesStore.setActiveRouteId(route.id)"
       >
         {{ route.headerTitle }}
       </li>
@@ -14,15 +14,27 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue';
 import { routes } from '../constants/routes';
 import { useRoutes } from '../state/routes.store';
 
-const { setActiveRouteId } = useRoutes();
+const routesStore = useRoutes();
+const isPopup = computed(() => routesStore.activeRouteId);
 </script>
 
 <style lang="scss" scoped>
 .menu {
   position: relative;
+  transition:
+    transform 0.325s ease-in-out,
+    filter 0.325s ease-in-out,
+    opacity 0.325s ease-in-out;
+
+  &.hidden {
+    transform: scale(0.9);
+    filter: blur(0.1rem);
+    opacity: 0;
+  }
 }
 
 .list {
@@ -38,8 +50,8 @@ const { setActiveRouteId } = useRoutes();
     color: var(--text-color);
     border-right: 1px solid var(--text-color);
     font-weight: 300;
-    font-size: .75rem;
-    letter-spacing: .25rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.25rem;
     transition: all 0.3s ease;
     text-wrap: nowrap;
 
