@@ -1,0 +1,34 @@
+<template>
+  <div class="intro" :class="{ hidden: isPopup }">
+    <Logo />
+    <Description />
+    <Menu />
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { computed } from 'vue';
+import { useRoutes } from '../state/routes.store';
+import Logo from './Logo.vue';
+import Description from './Description.vue';
+import Menu from './Menu.vue';
+
+const routesStore = useRoutes();
+const isPopup = computed(() => routesStore.activeRouteId);
+</script>
+
+<style lang="scss">
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  &.hidden {
+    transform: scale(0.9);
+    filter: blur(0.1rem);
+    opacity: 0;
+  }
+}
+</style>

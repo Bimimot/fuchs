@@ -1,11 +1,7 @@
 <template>
-  <Transition name="fade">
     <div class="wrapper" v-if="isShow">
-      <Avatar />
-      <Menu />
+      <Intro />
     </div>
-  </Transition>
-
   <BackgroundImage :src="backgroundSrc" is-shadow />
 </template>
 
@@ -13,8 +9,7 @@
 import { onMounted, ref } from 'vue';
 import BackgroundImage from './BackgroundImage.vue';
 import backgroundSrc from '../assets/images/bg.jpg';
-import Avatar from './Avatar.vue';
-import Menu from './Menu.vue';
+import Intro from './Intro.vue';
 
 const isShow = ref(false);
 
