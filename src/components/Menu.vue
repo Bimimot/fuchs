@@ -41,7 +41,7 @@ const routesStore = useRoutes();
   .option {
     padding: 0.75rem 1rem;
     text-transform: uppercase;
-    color: var(--text-color);
+    color: var(--title-color);
     border-right: 1px solid var(--title-color);
     font-weight: 500;
     font-size: 0.75rem;

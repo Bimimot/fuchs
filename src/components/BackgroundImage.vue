@@ -27,7 +27,8 @@ const isLoaded = ref(false);
 const isPopup = computed(() => routesStore.activeRouteId);
 
 const onLoad = () => {
-  isLoaded.value = true;
+  setTimeout(() =>
+  isLoaded.value = true, 750);
 };
 </script>
 
@@ -43,7 +44,7 @@ const onLoad = () => {
     object-fit: cover;
     object-position: center;
     transition:
-      opacity 1.5s 0.75s ease-in-out,
+      opacity 1.5s ease-in-out,
       filter 0.3s ease,
       transform 0.5s ease;
     filter: none;
@@ -64,8 +65,8 @@ const onLoad = () => {
   &.shadow {
     background-image: linear-gradient(
       to top,
-      rgba(19, 21, 25, 0.5),
-      rgba(19, 21, 25, 0.5)
+      rgba(19, 21, 25, 0.35),
+      rgba(19, 21, 25, 0.25)
     );
     background-size:
       auto,

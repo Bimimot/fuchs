@@ -1,7 +1,7 @@
 <template>
-    <div class="wrapper" v-if="isShow">
-      <Intro />
-    </div>
+  <Transition name="fade">
+    <Intro v-if="isShow"/>
+  </Transition>
   <BackgroundImage :src="backgroundSrc" is-shadow />
 </template>
 
@@ -16,18 +16,6 @@ const isShow = ref(false);
 onMounted(() => {
   setTimeout(() => {
     isShow.value = true;
-  }, 200);
+  }, 500);
 });
 </script>
-
-<style lang="scss" scoped>
-.wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem 2rem;
-  z-index: 100;
-}
-</style>

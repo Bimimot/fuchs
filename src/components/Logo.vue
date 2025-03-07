@@ -16,9 +16,7 @@
     border: 1px solid;
     color: var(--title-color);
     font-size: 2.5rem;
-  
     padding: 1rem 2rem;
-    z-index: 100;
     border-radius: 4px;
     overflow: hidden;
   }
