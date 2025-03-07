@@ -1,7 +1,11 @@
 <template>
   <Teleport to="body">
     <Transition name="fade">
-      <div v-if="route" class="overflow" @click="routesStore.resetActiveRouteId">
+      <div
+        v-if="route"
+        class="overflow"
+        @click="routesStore.resetActiveRouteId"
+      >
         <div class="popup" @click.stop="null">
           <div class="close" @click.stop="routesStore.resetActiveRouteId">
             <CloseIcon />
@@ -49,14 +53,21 @@ const route = computed(() =>
 
   .close {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 1rem;
     right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
     cursor: pointer;
     color: var(--text-color);
-    transition: transform 0.2s ease;
+    transition: background-color 0.2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50%;
 
     &:hover {
-      transform: scale(1.1);
+      background-color: rgba(255, 255, 255, 0.075);
     }
   }
 
