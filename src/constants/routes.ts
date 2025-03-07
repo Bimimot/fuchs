@@ -1,4 +1,6 @@
 import AboutSection from "sections/AboutSection.vue";
+import PriceSection from "sections/PriceSection.vue";
+import PersonSection from "sections/PersonSection.vue";
 
 export enum RoutesIds {
     Persons = "persons",
@@ -11,7 +13,7 @@ export const routes = [
     {
         id: RoutesIds.Persons,
         headerTitle: "Кто мы",
-        // component: null,
+        component: PersonSection,
     },
     {
         id: RoutesIds.About,
@@ -21,7 +23,7 @@ export const routes = [
     {
         id: RoutesIds.Price,
         headerTitle: "Стоимость",
-        // component: "Стоимость",
+        component: PriceSection,
     },
     {
         id: RoutesIds.Review,

@@ -30,22 +30,23 @@ const { setActiveRouteId } = useRoutes();
   flex-direction: row;
   list-style: none;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--text-color);
   border-radius: 4px;
   .option {
     padding: 0.5rem 1rem;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.75);
-    border-right: 1px solid rgba(255, 255, 255, 0.75);
+    color: var(--text-color);
+    border-right: 1px solid var(--text-color);
     font-weight: 300;
     font-size: .75rem;
     letter-spacing: .25rem;
     transition: all 0.3s ease;
+    text-wrap: nowrap;
 
     &:hover {
       cursor: pointer;
       background-color: rgba(255, 255, 255, 0.25);
-      color: #ffffff;
+      color: var(--title-color);
     }
   }
 

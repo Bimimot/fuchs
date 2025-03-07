@@ -2,7 +2,7 @@
   <Teleport to="body">
     <Transition name="fade">
       <div v-if="route" class="overflow" @click="routesStore.resetActiveRouteId">
-        <div class="popup" >
+        <div class="popup" @click.stop="null">
           <div class="close" @click.stop="routesStore.resetActiveRouteId">
             <CloseIcon />
           </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <img class="section-image" :src="srcImage" alt="about" />
+    <img class="section-image" :src="srcImage" alt="price" />
     <p class="section-text"> 
         Lorem ipsum dolor sit amet, consectetur et adipiscing elit.
         Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac.
@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import srcImage from 'assets/images/pic01.jpg';
+import srcImage from 'assets/images/pic02.jpg';
 
 
 </script>
