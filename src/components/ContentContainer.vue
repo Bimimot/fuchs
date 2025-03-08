@@ -1,7 +1,7 @@
 <template>
-  <div class="content-container">
-    <slot />
-  </div>
+    <div class="content-container">
+      <slot />
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -14,5 +14,6 @@
   border-radius: 4px;
   backdrop-filter: var(--overlay-filter);
   background-color: var(--overlay-color);
+  width: 100%;
 }
 </style>

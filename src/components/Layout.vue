@@ -1,9 +1,9 @@
 <template>
-  <div class="content-wrapper"> 
-    <TransitionGroup name="fade">
+  <div class="content-wrapper" id="wrapper">
+    <TransitionGroup name="fade"> 
       <Intro v-if="isShow"/>
       <Contacts v-if="isShow"/>
-    </TransitionGroup>
+      </TransitionGroup>
   </div>
   <BackgroundImage :src="backgroundSrc" is-shadow />
 </template>
@@ -29,8 +29,11 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  height: 100%;
+  margin: 2rem auto;
+  justify-content: space-between;
   width: auto;
   gap: 4rem;
+  min-width: 40rem;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <Teleport to="body">
+  <Teleport to="#wrapper">
     <div
       v-show="routesStore.activeRouteId"
       class="overflow"
@@ -41,17 +41,13 @@ const routesStore = useRoutes();
   }
 }
 .overflow {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: fixed;  
   inset: 0;
   z-index: 9999;
 }
 .popup {
   position: relative;
-  margin: auto;
+  margin: 2rem auto 0;
   background: var(--popup-background);
   padding: 4.5rem 2.5rem 1.5rem 2.5rem;
   position: relative;

@@ -4,7 +4,6 @@
       <component :is="c.icon" class="icon" />
       <span class="text">{{ c.value }} </span>
     </div>
-    `
   </ContentContainer>
 </template>
 
@@ -17,10 +16,9 @@ import ContentContainer from './ContentContainer.vue';
 .contacts {
   flex-direction: row;
   gap: 2rem;  
-  padding: 2rem 2rem;
+  padding: 1rem 2rem;
   margin: 0;
   flex-wrap: wrap;
-  transition: color 0.3s ease-in-out;
 
   .item {
     display: flex;

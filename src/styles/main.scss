@@ -20,13 +20,15 @@ body {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s 0.2s ease;
+  transition: opacity 0.5s 0.5s ease, transform .5s .3s ease, color 0.3s ease-in-out;
 }
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+  transform: translateY(-2rem);
 }
 .fade-enter-to,
 .fade-leave-from {
   opacity: 1;
+  transform: translateY(0);
 }
