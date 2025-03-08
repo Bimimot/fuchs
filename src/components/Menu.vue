@@ -2,12 +2,12 @@
   <div class="menu" >
     <ul class="list">
       <li
-        v-for="route in routes"
+        v-for="option in headerOptions"
         class="option"
-        :key="route.id"
-        @click="() => routesStore.setActiveRouteId(route.id)"
+        :key="option.id"
+        @click="() => routesStore.setActiveRouteId(option.id)"
       >
-        {{ route.headerTitle }}
+        {{ option.headerTitle }}
       </li>
     </ul>
   </div>
@@ -18,6 +18,7 @@ import { routes } from '../constants/routes';
 import { useRoutes } from '../state/routes.store';
 
 const routesStore = useRoutes();
+const headerOptions = routes.filter(r => !!r.headerTitle);
 </script>
 
 <style lang="scss" scoped>

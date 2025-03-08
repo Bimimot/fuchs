@@ -52,11 +52,11 @@ onMounted(() => {
     width: 0.5px;
     height: 4.05rem;
     background-color: var(--text-color);
-    left: 50%;
+    left: calc(50% - 0.025rem);
   }
 
   &:before {
-    top: -4.05rem;
+    top: -4.1rem;
   }
 
   &:after {

@@ -1,27 +1,32 @@
 <template>
   <Teleport to="body">
-    <div v-if="route" class="overflow" @click="routesStore.resetActiveRouteId">
-      <div class="popup" @click.stop="null">
+    <div
+      v-show="routesStore.activeRouteId"
+      class="overflow"
+      @click="routesStore.resetActiveRouteId"
+    >
+      <div
+        v-for="r in routes"
+        v-show="r.id === routesStore.activeRouteId"
+        class="popup"
+        @click.stop="null"
+      >
         <div class="close" @click.stop="routesStore.resetActiveRouteId">
           <CloseIcon />
         </div>
-        <h2 class="page-title">{{ route.headerTitle }}</h2>
-        <component :is="route.component" />
+        <h2 class="page-title">{{ r.popupTitle }}</h2>
+        <component :is="r.component" />
       </div>
     </div>
   </Teleport>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
 import { routes } from '../constants/routes';
 import { useRoutes } from '../state/routes.store';
 import CloseIcon from '../assets/icons/close.svg';
 
 const routesStore = useRoutes();
-const route = computed(() =>
-  routes.find((r) => r.id === routesStore.activeRouteId)
-);
 </script>
 
 <style lang="scss" scoped>

@@ -1,33 +1,45 @@
-import AboutSection from "sections/AboutSection.vue";
-import PriceSection from "sections/PriceSection.vue";
-import PersonSection from "sections/PersonSection.vue";
+import About from "sections/About.vue";
+import Price from "sections/Price.vue";
+import Person from "sections/Person.vue";
+import Contacts from "sections/Contacts.vue";
 
 export enum RoutesIds {
     Persons = "persons",
     About = "about",
     Price = "price",
     Review = "review",
+    Contacts = "contacts",
 };
 
 export const routes = [
     {
         id: RoutesIds.Persons,
         headerTitle: "Кто мы",
-        component: PersonSection,
+        popupTitle: "Кто мы",
+        component: Person,
     },
     {
         id: RoutesIds.About,
         headerTitle: "О занятиях",
-        component: AboutSection,
+        popupTitle: "О занятиях",
+        component: About,
     },
     {
         id: RoutesIds.Price,
         headerTitle: "Стоимость",
-        component: PriceSection,
+        popupTitle: "Стоимость",
+        component: Price,
     },
     {
         id: RoutesIds.Review,
         headerTitle: "Отзывы",
+        popupTitle: "Отзывы",
         // component: "Отзывы",
+    },
+    {
+        id: RoutesIds.Contacts,
+        headerTitle: "",
+        popupTitle: "Контакты",
+        component: Contacts,
     },
 ];

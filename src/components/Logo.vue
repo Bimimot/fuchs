@@ -18,6 +18,7 @@
     font-size: 2.5rem;
     padding: 1rem 2rem;
     border-radius: 4px;
+    font-weight: 900;
     overflow: hidden;
   }
   </style>
