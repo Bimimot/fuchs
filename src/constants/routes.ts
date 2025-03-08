@@ -1,14 +1,14 @@
 import About from "sections/About.vue";
 import Price from "sections/Price.vue";
 import Person from "sections/Person.vue";
-import Contacts from "sections/Contacts.vue";
+import Lesson from "sections/Lesson.vue";
 
 export enum RoutesIds {
     Persons = "persons",
     About = "about",
     Price = "price",
     Review = "review",
-    Contacts = "contacts",
+    Lesson = "lesson",
 };
 
 export const routes = [
@@ -37,9 +37,9 @@ export const routes = [
         // component: "Отзывы",
     },
     {
-        id: RoutesIds.Contacts,
+        id: RoutesIds.Lesson,
         headerTitle: "",
         popupTitle: "Контакты",
-        component: Contacts,
+        component: Lesson,
     },
 ];
