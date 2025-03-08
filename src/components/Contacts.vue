@@ -1,44 +1,32 @@
 <template>
-  <ul class="contacts">
-    <li v-for="c in contactsData" class="item">
+  <ContentContainer class="contacts">
+    <div v-for="c in contactsData" class="item">
       <component :is="c.icon" class="icon" />
       <span class="text">{{ c.value }} </span>
-    </li>
-  </ul>
+    </div>
+    `
+  </ContentContainer>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
-import { useRoutes } from '../state/routes.store';
 import { contactsData } from 'constants/contacts';
-
-const routesStore = useRoutes();
-const isPopup = computed(() => routesStore.activeRouteId);
+import ContentContainer from './ContentContainer.vue';
 </script>
 
 <style lang="scss" scoped>
 .contacts {
-  position: relative;
-  display: flex;
   flex-direction: row;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  gap: 2rem;  
   padding: 2rem 2rem;
   margin: 0;
-  z-index: 100;
-  border-radius: 4px;
-  backdrop-filter: blur(0.125rem);
-  background-color: rgba(0, 0, 0, 0.15);
   flex-wrap: wrap;
-  transition: color .3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 
   .item {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: .75rem;
+    gap: 0.75rem;
     color: var(--title-color);
     flex-wrap: nowrap;
 

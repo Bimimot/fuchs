@@ -6,7 +6,7 @@
     :class="{ loaded: isLoaded, blur: isPopup }"
     alt="background"
   />
-  <div v-if="isShadow && isLoaded" class="container shadow" />
+  <!-- <div v-if="isShadow && isLoaded" class="container shadow" /> -->
 </template>
 
 <script lang="ts" setup>
@@ -57,23 +57,9 @@ const onLoad = () => {
     }
 
     &.blur {
-      filter: blur(0.25rem);
+      filter: var(--overlay-filter);
       transform: none;
     }
-  }
-
-  &.shadow {
-    background-image: linear-gradient(
-      to top,
-      rgba(19, 21, 25, 0.35),
-      rgba(19, 21, 25, 0.25)
-    );
-    background-size:
-      auto,
-      256px 256px;
-    background-position: center, center;
-    background-repeat: no-repeat, repeat;
-    z-index: 10;
   }
 }
 </style>

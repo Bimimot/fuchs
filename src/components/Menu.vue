@@ -45,7 +45,7 @@ const headerOptions = routes.filter(r => !!r.headerTitle);
     color: var(--title-color);
     border-right: 1px solid var(--title-color);
     font-weight: 500;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     letter-spacing: 0.25rem;
     transition: all 0.3s ease;
     text-wrap: nowrap;

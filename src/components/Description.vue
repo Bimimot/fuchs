@@ -12,7 +12,7 @@ const isMounted = ref(false);
 onMounted(() => {
   setTimeout(() => {
     isMounted.value = true;
-  }, 200);
+  }, 500);
 });
 </script>
 
@@ -30,37 +30,21 @@ onMounted(() => {
   border-top: 1px solid var(--title-color);
   border-bottom: 1px solid var(--title-color);
   overflow: hidden;
-  opacity: 0;
+  opacity: 1;
   transition:
       max-height 1s ease,
-      padding 1s ease,
-      opacity .5s ease-in-out;
+      padding 1s ease;
   transition-delay: .5s;
   
 
   &.mounted {
     padding: 3rem 2rem;
     max-height: 40rem;
-    opacity: 1;
     overflow: visible;
-  }
 
-  &:after,
-  &:before {
-    position: absolute;
-    content: '';
-    width: 0.5px;
-    height: 4.05rem;
-    background-color: var(--text-color);
-    left: calc(50% - 0.025rem);
-  }
-
-  &:before {
-    top: -4.1rem;
-  }
-
-  &:after {
-    bottom: -4.05rem;
+    .text {
+      opacity: 1;
+    }
   }
 
   .text {
@@ -69,6 +53,8 @@ onMounted(() => {
     line-height: 2rem;
     padding: 0;
     margin: 0;
+    opacity: 0;
+    transition: opacity .2s 1.2s ease;
   }
 }
 </style>
