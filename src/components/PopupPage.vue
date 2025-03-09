@@ -30,6 +30,8 @@ const routesStore = useRoutes();
 </script>
 
 <style lang="scss" scoped>
+@use '../styles/breakpoints.scss' as *;
+
 @keyframes popup {
   0% {
     opacity: 0;
@@ -51,7 +53,7 @@ const routesStore = useRoutes();
   background: var(--popup-background);
   padding: 4.5rem 2.5rem 1.5rem 2.5rem;
   position: relative;
-  width: 40rem;
+  width: inherit;
   max-width: 100%;
   min-height: 10rem;
   border-radius: 4px;
@@ -91,6 +93,10 @@ const routesStore = useRoutes();
     padding: 0 0 0.5rem;
     margin: 0;
     
+  }
+
+  @include medium {
+    margin: 0 auto 0;
   }
 }
 </style>

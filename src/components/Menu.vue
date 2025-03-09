@@ -22,7 +22,7 @@ const headerOptions = routes.filter(r => !!r.headerTitle);
 </script>
 
 <style lang="scss" scoped>
-@use '../styles//breakpoints.scss' as *;
+@use '../styles/breakpoints.scss' as *;
 
 .menu {
   position: relative;

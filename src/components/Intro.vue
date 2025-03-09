@@ -19,6 +19,8 @@ const isPopup = computed(() => routesStore.activeRouteId);
 </script>
 
 <style lang="scss">
+@use '../styles/breakpoints.scss' as *;
+
 .intro {
   flex-direction: column;
   padding: 3rem 2rem;
@@ -28,6 +30,10 @@ const isPopup = computed(() => routesStore.activeRouteId);
     transform: scale(0.9);
     filter: blur(0.1rem);
     opacity: 0;
+  }
+
+  @include small {
+    padding: 1.5rem 1rem;
   }
 }
 </style>

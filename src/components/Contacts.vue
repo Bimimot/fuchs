@@ -13,6 +13,8 @@ import ContentContainer from './ContentContainer.vue';
 </script>
 
 <style lang="scss" scoped>
+@use '../styles/breakpoints.scss' as *;
+
 .contacts {
   flex-direction: row;
   column-gap: 2rem;  
@@ -29,12 +31,13 @@ import ContentContainer from './ContentContainer.vue';
     gap: 0.75rem;
     color: var(--title-color);
     flex-wrap: nowrap;
+    transition: color .3s ease;
 
     .icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.25rem;
+      padding: 0.15rem;
       width: 1.5rem;
       height: 1.5rem;
       border: 1px solid;
@@ -51,6 +54,10 @@ import ContentContainer from './ContentContainer.vue';
   :hover {
     cursor: pointer;
     color: var(--accent-color);
+  }
+
+  @include small {
+    padding: 1rem;
   }
 }
 </style>

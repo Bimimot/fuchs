@@ -25,9 +25,10 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@use '../styles//breakpoints.scss' as *;
+@use '../styles/breakpoints.scss' as *;
 
 .content-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,5 +36,7 @@ onMounted(() => {
   margin: 2rem 1rem;
   justify-content: space-between;
   width: auto;
+
+  border: 1px solid red;
 }
 </style>

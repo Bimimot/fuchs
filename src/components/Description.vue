@@ -17,16 +17,16 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+@use '../styles/breakpoints.scss' as *;
+
 @keyframes height-grow {
   0% {
     max-height: 0;
-    padding: 0em 2rem;
     color: transparent;
   }
 
   100% {
     max-height: 20rem;
-    padding: 2.5rem 2rem;
     color: var(--title-color);
   }
 }
@@ -41,18 +41,49 @@ onMounted(() => {
   border-top: 1px solid var(--title-color);
   border-bottom: 1px solid var(--title-color);
   overflow: hidden;
+  width: 100%;
 
   max-height: 0;
   padding: 0rem 2rem;
   color: transparent;
-  animation: height-grow .9s .8s ease-out forwards;
+  padding: 0 2rem;
+  animation: height-grow 1s .8s ease-out forwards;
 
   .text {
     letter-spacing: .15rem;
     font-size: 1.125rem;
-    line-height: 2rem;
+    line-height: 160%;
     padding: 0;
     margin: 0;
+    text-align: center;
+    &:first-child {
+      padding-top: 2.5rem;
+    }
+    &:last-child {
+      padding-bottom: 2.5rem;
+    }
+  }
+
+  @include medium {
+    margin: 2.5rem auto;
+    .text {
+      font-size: 1rem;
+      letter-spacing: .1rem;
+      &:first-child {
+      padding-top: 1.5rem;
+    }
+    &:last-child {
+      padding-bottom: 1.5rem;
+    }
+    }
+  }
+
+  @include small {
+    margin: 1.5rem auto;
+
+    .text {
+      font-size: .75rem;
+    }
   }
 }
 </style>
