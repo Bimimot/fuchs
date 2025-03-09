@@ -1,36 +1,19 @@
 @use 'sass:map';
 
 $breakpoints: (
-  'xxs': 375px,
-  'xs': 768px,
-  's': 996px,
-  'm': 1196px,
-  'l': 1440px,
-  'xl': 1920px,
-  'xxl': 2560px,
+  's': 480px,
+  'm': 768px,
 );
 
-@mixin breakpoint($name) {
-  @media screen and (max-width: map.get($breakpoints, $name)) {
-    @content;
-  }
-}
+@mixin breakpoint($size) {
+  $value: map-get($breakpoints, $size);
 
-@mixin xxlarge {
-  @include breakpoint(xxl) {
-    @content;
-  }
-}
-
-@mixin xlarge {
-  @include breakpoint(xl) {
-    @content;
-  }
-}
-
-@mixin large {
-  @include breakpoint(l) {
-    @content;
+  @if $value {
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint #{$size} not found in \$breakpoints map.";
   }
 }
 
@@ -46,14 +29,3 @@ $breakpoints: (
   }
 }
 
-@mixin xsmall {
-  @include breakpoint(xs) {
-    @content;
-  }
-}
-
-@mixin xxsmall {
-  @include breakpoint(xxs) {
-    @content;
-  }
-}

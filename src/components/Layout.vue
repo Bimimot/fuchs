@@ -1,9 +1,9 @@
 <template>
   <div class="content-wrapper" id="wrapper">
-    <TransitionGroup name="fade"> 
-      <Intro v-if="isShow"/>
-      <Contacts v-if="isShow"/>
-      </TransitionGroup>
+    <TransitionGroup name="fade">
+      <Intro v-if="isShow" />
+      <Contacts v-if="isShow" />
+    </TransitionGroup>
   </div>
   <BackgroundImage :src="backgroundSrc" is-shadow />
 </template>
@@ -20,20 +20,20 @@ const isShow = ref(false);
 onMounted(() => {
   setTimeout(() => {
     isShow.value = true;
-  }, 500);
+  }, 1500);
 });
 </script>
 
 <style lang="scss" scoped>
+@use '../styles//breakpoints.scss' as *;
+
 .content-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  margin: 2rem auto;
+  margin: 2rem 1rem;
   justify-content: space-between;
   width: auto;
-  gap: 4rem;
-  min-width: 40rem;
 }
 </style>

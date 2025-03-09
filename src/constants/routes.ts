@@ -26,7 +26,7 @@ export const routes = [
     },
     {
         id: RoutesIds.Price,
-        headerTitle: "Стоимость",
+        headerTitle: "Сколько стоит",
         popupTitle: "Стоимость",
         component: Price,
     },

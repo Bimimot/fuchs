@@ -78,8 +78,7 @@ const routesStore = useRoutes();
     }
   }
 
-  .page-title {
-    padding: 0;
+  .page-title { 
     vertical-align: baseline;
     color: var(--title-color);
     font-weight: 600;
@@ -89,8 +88,9 @@ const routesStore = useRoutes();
     letter-spacing: 0.5rem;
     border-bottom: solid 1px var(--title-color);
     width: max-content;
-    padding-bottom: 0.5rem;
-    margin: 0 0 2rem 0;
+    padding: 0 0 0.5rem;
+    margin: 0;
+    
   }
 }
 </style>

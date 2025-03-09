@@ -1,6 +1,7 @@
 <template>
     <div class="logo">
       ФУКС и ФОКС
+      <span>курсы немецкого языка</span>
     </div>
   </template>
   
@@ -11,6 +12,7 @@
   .logo {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 1px solid;
@@ -20,6 +22,11 @@
     border-radius: 4px;
     font-weight: 900;
     overflow: hidden;
+
+    span {
+      font-size: 1rem;
+      font-weight: 500;
+    }
   }
   </style>
   

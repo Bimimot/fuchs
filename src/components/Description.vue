@@ -1,7 +1,7 @@
 <template>
   <div class="description">
-    <p class="text">Aliquam erat volutpat. Praesent urna nisi.</p>
-    <p class="text">Aliquam nisi.</p>
+    <p class="text">Для работы, для учёбы, для будущего</p>
+    <p class="text">Интересно и эффективно</p>
   </div>
 </template>
 
@@ -19,12 +19,15 @@ onMounted(() => {
 <style lang="scss" scoped>
 @keyframes height-grow {
   0% {
-    height: auto;
     max-height: 0;
+    padding: 0em 2rem;
+    color: transparent;
   }
 
   100% {
     max-height: 20rem;
+    padding: 2.5rem 2rem;
+    color: var(--title-color);
   }
 }
 
@@ -33,14 +36,16 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 2rem;
   margin: 4rem auto;
   height: auto;
-  color: var(--title-color);
   border-top: 1px solid var(--title-color);
   border-bottom: 1px solid var(--title-color);
-  opacity: 1;
-  overflow: visible;
+  overflow: hidden;
+
+  max-height: 0;
+  padding: 0rem 2rem;
+  color: transparent;
+  animation: height-grow .9s .8s ease-out forwards;
 
   .text {
     letter-spacing: .15rem;
@@ -48,7 +53,6 @@ onMounted(() => {
     line-height: 2rem;
     padding: 0;
     margin: 0;
-    opacity: 1;
   }
 }
 </style>
