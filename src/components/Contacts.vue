@@ -15,7 +15,8 @@ import ContentContainer from './ContentContainer.vue';
 <style lang="scss" scoped>
 .contacts {
   flex-direction: row;
-  gap: 2rem;  
+  column-gap: 2rem;  
+  row-gap: .5rem;  
   padding: 1rem 2rem;
   margin: 0;
   flex-wrap: wrap;
