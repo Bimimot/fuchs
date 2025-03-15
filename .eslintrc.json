@@ -1,0 +1,9 @@
+{
+  "extends": ["prettier"],
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/lib/**",
+    "**/dist/**",
+    "**/.*/**"
+  ]
+}

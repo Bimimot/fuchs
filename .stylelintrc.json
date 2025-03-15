@@ -1,0 +1,9 @@
+{
+  "extends": "./node_modules/@wg/fixmyfront/configs/stylelint/vue.js",
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/lib/**",
+    "**/dist/**",
+    "**/.*/**"
+  ]
+}
