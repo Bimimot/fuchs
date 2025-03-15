@@ -6,7 +6,6 @@
     :class="{ loaded: isLoaded, blur: isPopup }"
     alt="background"
   />
-  <!-- <div v-if="isShadow && isLoaded" class="container shadow" /> -->
 </template>
 
 <script lang="ts" setup>
@@ -28,7 +27,7 @@ const isPopup = computed(() => routesStore.activeRouteId);
 
 const onLoad = () => {
   setTimeout(() =>
-  isLoaded.value = true, 750);
+  isLoaded.value = true, 150);
 };
 </script>
 
@@ -44,7 +43,7 @@ const onLoad = () => {
     object-fit: cover;
     object-position: center;
     transition:
-      opacity 1.5s ease-in-out,
+      opacity 1s ease-in-out,
       filter 0.3s ease,
       transform 0.5s ease;
     filter: none;

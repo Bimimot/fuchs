@@ -11,12 +11,16 @@
         class="popup"
         @click.stop="null"
       >
-        <div class="close" @click.stop="routesStore.resetActiveRouteId">
-          <CloseIcon />
+        <div class="page-header">
+          <h2 class="page-title">{{ r.popupTitle }}</h2>
+          <div class="close" @click.stop="routesStore.resetActiveRouteId">
+            <CloseIcon />
+          </div>
         </div>
-        <h2 class="page-title">{{ r.popupTitle }}</h2>
-        <component :is="r.component" />
-        <Contacts />
+        <div class="page-content">
+          <component :is="r.component" />
+          <Contacts />
+        </div>
       </div>
     </div>
   </Teleport>
@@ -46,7 +50,7 @@ const routesStore = useRoutes();
 .overflow {
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 200;
 }
 
 .popup {
@@ -54,25 +58,20 @@ const routesStore = useRoutes();
   display: flex;
   flex-direction: column;
   background: var(--popup-background);
-  padding: 4.5rem 2.5rem 1.5rem 2.5rem;
+  padding: 2rem 0 1.5rem;
   margin: 0 auto 0;
   width: inherit;
-  max-width: 42rem;
+  max-width: 46rem;
   height: 100%;
   border-radius: 4px;
   opacity: 0;
   animation: popup 0.4s ease 0.2s forwards;
-  overflow-y: auto;
-  scrollbar-color: var(--text-color) transparent;
-  scrollbar-width: thin;
 
   .close {
-    position: absolute;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 1rem;
-    right: 1rem;
     width: 2.5rem;
     height: 2.5rem;
     cursor: pointer;
@@ -86,6 +85,15 @@ const routesStore = useRoutes();
     }
   }
 
+  .page-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0.5rem 0.5rem 2.5rem;
+  }
+
   .page-title {
     vertical-align: baseline;
     color: var(--title-color);
@@ -96,18 +104,29 @@ const routesStore = useRoutes();
     letter-spacing: 0.5rem;
     border-bottom: solid 1px var(--title-color);
     width: max-content;
-    padding: 0 0 0.5rem;
     margin: 0;
+  }
+
+  .page-content {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    padding: 0 2.5rem;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-color: var(--text-color) transparent;
+    scrollbar-width: thin;
   }
 
   @include medium {
     transform: translateY(0) !important;
-    padding: 3.5rem 1.5rem 1rem 1.5rem;
+    padding: 1rem 0;
     overflow-y: auto;
-
-    .close {
-      top: 0.5rem;
-      right: 0.5rem;
+    .page-header {
+      padding: 0 0.25rem 0.5rem 1rem;
+    }
+    .page-content {
+      padding: 0 1rem;
     }
   }
 }

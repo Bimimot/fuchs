@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
   border-radius: 4px;
   backdrop-filter: var(--overlay-filter);
   background-color: var(--overlay-color);

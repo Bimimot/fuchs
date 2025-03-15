@@ -22,6 +22,7 @@
     border-radius: 4px;
     font-weight: 900;
     overflow: hidden;
+    text-align: center;
 
     span {
       font-size: 1rem;

@@ -22,7 +22,6 @@ import ContentContainer from './ContentContainer.vue';
   padding: 1rem 2rem;
   margin: auto 0 0 0;
   flex-wrap: wrap;
-  z-index: 9999;
 
   .item {
     display: flex;

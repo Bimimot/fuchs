@@ -1,9 +1,10 @@
 <template>
   <div class="content-wrapper">
     <TransitionGroup name="fade">
-      <Intro v-if="isShow" :class="{ hidden: isPopup }"/>
-      <Contacts v-if="isShow" :class="{ hidden: isPopup }"/>
+      <Intro v-if="isShow" :class="{ hidden: isPopup }" />
+      <Contacts v-if="isShow" :class="{ hidden: isPopup }" />
     </TransitionGroup>
+
   </div>
   <BackgroundImage :src="backgroundSrc" is-shadow />
 </template>
@@ -24,7 +25,7 @@ const isPopup = computed(() => routesStore.activeRouteId);
 onMounted(() => {
   setTimeout(() => {
     isShow.value = true;
-  }, 1500);
+  }, 800);
 });
 </script>
 
@@ -39,11 +40,14 @@ onMounted(() => {
   height: 100%;
   margin: 2rem 1rem;
   width: auto;
+  z-index: 100;
+
+  @include small {
+    margin: 0 1rem;
+  }
 }
 
 .hidden {
-    transform: scale(0.9);
-    filter: blur(0.1rem);
-    opacity: 0;
-  }
+  opacity: 0;
+}
 </style>
