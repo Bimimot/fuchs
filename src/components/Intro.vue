@@ -7,15 +7,10 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
-import { useRoutes } from '../state/routes.store';
 import ContentContainer from './ContentContainer.vue';
 import Logo from './Logo.vue';
 import Description from './Description.vue';
 import Menu from './Menu.vue';
-
-const routesStore = useRoutes();
-const isPopup = computed(() => routesStore.activeRouteId);
 </script>
 
 <style lang="scss">

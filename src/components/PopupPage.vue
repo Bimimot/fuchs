@@ -44,7 +44,7 @@ const routesStore = useRoutes();
   }
 }
 .overflow {
-  position: fixed;  
+  position: fixed;
   inset: 0;
   z-index: 999;
 }
@@ -62,6 +62,9 @@ const routesStore = useRoutes();
   border-radius: 4px;
   opacity: 0;
   animation: popup 0.4s ease 0.2s forwards;
+  overflow-y: auto;
+  scrollbar-color: var(--text-color) transparent;
+  scrollbar-width: thin;
 
   .close {
     position: absolute;
@@ -83,7 +86,7 @@ const routesStore = useRoutes();
     }
   }
 
-  .page-title { 
+  .page-title {
     vertical-align: baseline;
     color: var(--title-color);
     font-weight: 600;
@@ -95,7 +98,6 @@ const routesStore = useRoutes();
     width: max-content;
     padding: 0 0 0.5rem;
     margin: 0;
-    
   }
 
   @include medium {
@@ -104,8 +106,8 @@ const routesStore = useRoutes();
     overflow-y: auto;
 
     .close {
-      top: .5rem;
-      right: .5rem;
+      top: 0.5rem;
+      right: 0.5rem;
     }
   }
 }
