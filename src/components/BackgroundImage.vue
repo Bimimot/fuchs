@@ -25,10 +25,7 @@ const routesStore = useRoutes();
 const isLoaded = ref(false);
 const isPopup = computed(() => routesStore.activeRouteId);
 
-const onLoad = () => {
-  setTimeout(() =>
-  isLoaded.value = true, 150);
-};
+const onLoad = () => { isLoaded.value = true };
 </script>
 
 <style scoped>

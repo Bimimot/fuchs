@@ -4,7 +4,6 @@
       <Intro v-if="isShow" :class="{ hidden: isPopup }" />
       <Contacts v-if="isShow" :class="{ hidden: isPopup }" />
     </TransitionGroup>
-
   </div>
   <BackgroundImage :src="backgroundSrc" is-shadow />
 </template>
@@ -25,7 +24,7 @@ const isPopup = computed(() => routesStore.activeRouteId);
 onMounted(() => {
   setTimeout(() => {
     isShow.value = true;
-  }, 800);
+  }, 200);
 });
 </script>
 
