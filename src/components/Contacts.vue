@@ -20,7 +20,7 @@ import ContentContainer from './ContentContainer.vue';
   column-gap: 2rem;  
   row-gap: .5rem;  
   padding: 1rem 2rem;
-  margin: 0;
+  margin: auto 0 0 0;
   flex-wrap: wrap;
   z-index: 9999;
 
@@ -56,8 +56,13 @@ import ContentContainer from './ContentContainer.vue';
     color: var(--accent-color);
   }
 
+  @include medium {
+    padding: 1rem 1.5rem;
+  }
+
   @include small {
     padding: 1rem;
+    justify-content: flex-start;
   }
 }
 </style>

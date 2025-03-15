@@ -1,5 +1,5 @@
 <template>
-  <Teleport to="#wrapper">
+  <Teleport to="body">
     <div
       v-show="routesStore.activeRouteId"
       class="overflow"
@@ -16,6 +16,7 @@
         </div>
         <h2 class="page-title">{{ r.popupTitle }}</h2>
         <component :is="r.component" />
+        <Contacts />
       </div>
     </div>
   </Teleport>
@@ -25,6 +26,7 @@
 import { routes } from '../constants/routes';
 import { useRoutes } from '../state/routes.store';
 import CloseIcon from '../assets/icons/close.svg';
+import Contacts from './Contacts.vue';
 
 const routesStore = useRoutes();
 </script>
@@ -39,7 +41,6 @@ const routesStore = useRoutes();
 
   100% {
     opacity: 1;
-    transform: translateY(-0.5rem);
   }
 }
 .overflow {
@@ -47,15 +48,17 @@ const routesStore = useRoutes();
   inset: 0;
   z-index: 999;
 }
+
 .popup {
   position: relative;
-  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
   background: var(--popup-background);
   padding: 4.5rem 2.5rem 1.5rem 2.5rem;
-  position: relative;
+  margin: 0 auto 0;
   width: inherit;
-  max-width: 100%;
-  min-height: 10rem;
+  max-width: 42rem;
+  height: 100%;
   border-radius: 4px;
   opacity: 0;
   animation: popup 0.4s ease 0.2s forwards;
@@ -96,7 +99,14 @@ const routesStore = useRoutes();
   }
 
   @include medium {
-    margin: 0 auto 0;
+    transform: translateY(0) !important;
+    padding: 3.5rem 1.5rem 1rem 1.5rem;
+    overflow-y: auto;
+
+    .close {
+      top: .5rem;
+      right: .5rem;
+    }
   }
 }
 </style>

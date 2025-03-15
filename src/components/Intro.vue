@@ -1,5 +1,5 @@
 <template>
-  <ContentContainer class="intro" :class="{ hidden: isPopup }">
+  <ContentContainer class="intro">
     <Logo />
     <Description />
     <Menu />
@@ -25,12 +25,6 @@ const isPopup = computed(() => routesStore.activeRouteId);
   flex-direction: column;
   padding: 3rem 2rem;
   width: 100%;
-  
-  &.hidden {
-    transform: scale(0.9);
-    filter: blur(0.1rem);
-    opacity: 0;
-  }
 
   @include small {
     padding: 1.5rem 1rem;
