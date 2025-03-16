@@ -120,7 +120,7 @@ const routesStore = useRoutes();
 
   @include medium {
     transform: translateY(0) !important;
-    padding: 1rem 0 2.5rem;
+    padding: 1rem 0 3rem;
     overflow-y: auto;
 
     .page-header {
