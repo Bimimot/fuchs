@@ -1,10 +1,10 @@
 <template>
-  <div class="content-wrapper">
-    <TransitionGroup name="fade">
-      <Intro v-if="isShow" :class="{ hidden: isPopup }" />
-      <Contacts v-if="isShow" :class="{ hidden: isPopup }" />
-    </TransitionGroup>
-  </div>
+  <Transition name="fade">
+    <div v-if="isShow" class="content-wrapper" :class="{ hidden: isPopup }">
+        <Intro />
+        <Contacts />
+    </div>
+  </Transition>
   <BackgroundImage :src="backgroundSrc" is-shadow />
 </template>
 
@@ -42,7 +42,7 @@ onMounted(() => {
   z-index: 100;
 
   @include small {
-    margin: 0 1rem;
+    margin: .5rem 1rem;
   }
 }
 

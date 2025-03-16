@@ -38,7 +38,7 @@ const headerOptions = routes.filter(r => !!r.headerTitle);
   list-style: none;
   padding: 0;
   margin: 0;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--title-color);
   border-radius: 4px;
 
   .option {
