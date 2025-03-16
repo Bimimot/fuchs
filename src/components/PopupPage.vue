@@ -97,7 +97,7 @@ const routesStore = useRoutes();
   .page-title {
     vertical-align: baseline;
     color: var(--title-color);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     font-size: 1.5rem;
     line-height: 1.4;
